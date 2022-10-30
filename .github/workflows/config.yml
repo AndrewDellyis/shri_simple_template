@@ -13,8 +13,8 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - run: npm install
-      - run: npm run lint:js
-      - run: npm run lint:css
+      - run: npm run lint:js:fix
+      - run: npm run lint:css:fix
       - run: npm run build
   merge:
     name: merge
@@ -26,8 +26,8 @@ jobs:
         with:
           node-version: 16.x
       - run: npm ci
-      - run: npm run lint:js
-      - run: npm run lint:css
+      - run: npm run lint:js:fix
+      - run: npm run lint:css:fix
       - run: |
           npm run build
           npm run analyze
