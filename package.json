@@ -30,7 +30,7 @@
     "lint:css:fix": "stylelint \"**/*.css\" --fix",
     "analyze": "webpack --json stats.json",
     "validate": "node_modules/.bin/statoscope validate --input stats.json --config=./statoscope.config.js",
-    "deploy": "git config --global user.email \"you@example.com\" && git config --global user.name \"Your Name\" && gh-pages -d dist"
+    "deploy": "git config --global user.email \"me@dellyis.me\" && git config --global user.name \"Dellyis\" && gh-pages -d dist"
   },
   "devDependencies": {
     "@babel/core": "^7.19.6",
