@@ -19,6 +19,8 @@ jobs:
   merge:
     name: merge
     runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - uses: actions/checkout@v3
       - name: Setup Node 16.x
@@ -32,4 +34,8 @@ jobs:
           npm run build
           npm run analyze
           npm run validate
-      - run: npm run deploy
+      - run: |
+          git config --global user.name "Dellyis"
+          git config --global user.email "dellyis.ds@yandex.ru"
+          git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
+          npm run deploy
